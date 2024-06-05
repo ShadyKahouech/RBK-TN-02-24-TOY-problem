@@ -19,15 +19,23 @@ function firstNonRepeatedCharacter(string) {
     .shift();
 }
 
+// function firstNonRepeatedCharacter(string) {
+//   var str = string.split("");
+//   var char = str[0];
+//   for (var i = 0; i < str.length; i++) {
+//     for (var j = 1; j < str.length; j++) {
+//       if (i !== j && str[j] === str[i]) {
+//         char = str[i++];
+//       }
+//     }
+//   }
+//   return char;
+// }
 function firstNonRepeatedCharacter(string) {
-  var str = string.split("");
-  var char = str[0];
-  for (var i = 0; i < str.length; i++) {
-    for (var j = 1; j < str.length; j++) {
-      if (i !== j && str[j] === str[i]) {
-        char = str[i++];
-      }
+  for (var i = 0; i < string.length; i++) {
+    if (string.indexOf(string[i]) === string.lastIndexOf(string[i])) {
+      return string[i];
     }
   }
-  return char;
+  return null;
 }
